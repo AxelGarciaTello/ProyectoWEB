@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Registro del alumno">
+    <meta name="author" content="Garc&iacute;a Tello Axel">
+    <title>Registro</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+
+		<!-- Bootstrap core CSS -->
+		<link href="../Bibliotecas/css/bootstrap.min.css"  rel="stylesheet">
+		<style>
+		  .bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+		  }
+
+		  @media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+			  font-size: 3.5rem;
+			}
+		  }
+		</style>
+
+		<!-- Custom styles for this template -->
+		<link href="../Bibliotecas/css/form-validation.css" rel="stylesheet">
+	</head>
+	<body class="bg-light">
+		<div class="container">
+			<main>
+		    	<div class="py-5 text-center">
+		    		<img class="d-block mx-auto mb-4" src="../Imagenes/escudoESCOM.png"alt="" width="150" height="118.75">
+    				  <h2>Bienvenido a ESCOM</h2>
+		    		  <p class="lead">Por favor llena el siguiente formulario para poder otorgarle una cita para se examen diagnostico.</p>
+	    		</div>
+
+					<div class="row g-3">
+		  				<div class="col-md-7 col-lg-12">
+			    				<h4 class="mb-3">Datos Personales</h4>
+		    			    <form class="needs-validation" novalidate>
+	    			      <div class="row g-3">
+
+										<div class="col-sm-6">
+											<label for="CURP" class="form-label">CURP</label>
+											<input type="text" class="form-control" id="CURP" required>
+											<div class="invalid-feedback">
+												Se requiere un CURP valido.
+											</div>
+										</div>
+
+										<div class="col-sm-6">
+											<label for="nombre" class="form-label">Nombre(s)</label>
+											<input type="text" class="form-control" id="nombre" required>
+											<div class="invalid-feedback">
+												Se requiere un nombre valido.
+											</div>
+										</div>
+
+								    <div class="col-sm-6">
+								    	<label for="primerApellido" class="form-label">Primer apellido</label>
+								     	<input type="text" class="form-control" id="primerApellido" required>
+								     		<div class="invalid-feedback">
+								        	Se requiere un apellido valido.
+								        </div>
+								    </div>
+
+										<div class="col-sm-6">
+											<label for="segundoApellido" class="form-label">Segundo apellido</label>
+											<input type="text" class="form-control" id="segundoApellido" required>
+											<div class="invalid-feedback">
+												Se requiere un segundo apellido valido.
+											</div>
+										</div>
+
+										<div class="my-3">
+											<label for="genero" class="form-label">G&eacute;nero</label>
+											<div class="form-check">
+												<input id="hombre" name="genero" type="radio" class="form-check-input" required>
+												<label class="form-check-label" for="Hombre">Hombre</label>
+											</div>
+											<div class="form-check">
+												<input id="mujer" name="genero" type="radio" class="form-check-input" required>
+												<label class="form-check-label" for="Mujer">Mujer</label>
+											</div>
+						        </div>
+
+										<div class="col-md-4">
+											<label for="nacimiento" class="form-label">Fecha de nacimiento</label>
+											<input type="date"  class="form-control" id="nacimiento" min="1990-01-01" max="2020-01-01" required>
+											<div class="invalid-feedback">
+												Se requiere una fecha valida.
+											</div>
+										</div>
+
+										<div class="col-md-4">
+											<label for="correo" class="form-label">Correo electronico</label>
+											<input type="email" class="form-control" id="correo" placeholder="you@example.com" required>
+											<div class="invalid-feedback">
+												Se requiere un correo valido.
+											</div>
+										</div>
+
+										<div class="col-md-4">
+											<label for="telefono" class="form-label">Tel&eacute;fono fijo o celular</label>
+											<input type="text" class="form-control" id="telefono" required>
+											<div class="invalid-feedback">
+												Se requiere un tel&eacute;fono valido.
+											</div>
+								  	</div>
+
+										<h6 class="mb-3">Direcci&oacute;n</h6>
+										<div class="col-md-6">
+											<label for="calle" class="form-label">Calle</label>
+										  <input type="text" class="form-control" id="calle" required>
+										  <div class="invalid-feedback">
+											  Se requiere una calle valida.
+										  </div>
+										</div>
+
+										<div class="col-sm-3">
+						        	<label for="interior" class="form-label">No. interior</label>
+						        	<input type="text" class="form-control" id="interior" required>
+						        	<div class="invalid-feedback">
+						         			Se requiere un no. interior valido.
+						        	</div>
+						      	</div>
+
+										<div class="col-sm-3">
+								    	<label for="exterior" class="form-label">No. exterior</label>
+								      <input type="text" class="form-control" id="exterior">
+								      <div class="invalid-feedback">
+								      	Se requiere un no. exterior valido.
+						        	</div>
+						      	</div>
+
+										<div class="col-md-4">
+						        	<label for="colonia" class="form-label">Colonia</label>
+								      <input type="text" class="form-control" id="colonia" required>
+								      <div class="invalid-feedback">
+								      	Se requiere una colonia valida.
+								      </div>
+						      	</div>
+
+										<div class="col-md-4">
+								    	<label for="municipio" class="form-label">Municipio o alcald&iacute;a</label>
+								      <input type="text" class="form-control" id="municipio" required>
+								      <div class="invalid-feedback">
+								      	Se requiere un municipio valido.
+						        	</div>
+						      	</div>
+
+										<div class="col-md-4">
+						        	<label for="estado" class="form-label">Estado</label>
+								      <input type="text" class="form-control" id="estado" required>
+								      <div class="invalid-feedback">
+								      	Se requiere un estado valido.
+								      </div>
+							      </div>
+
+										<hr class="my-4">
+										<h4 class="mb-3">Escuela de procedencia</h4>
+
+										<div class="col-md-3">
+								    	<label for="tipo" class="form-label">Tipo</label>
+								      <select class="form-select" id="tipo" required>
+												<option value="">Seleccionar</option>
+												<option>P&uacute;blica</option>
+												<option>Privada</option>
+						        	</select>
+								      <div class="invalid-feedback">
+								      	Se requiere un tipo valido.
+								      </div>
+										</div>
+
+										<div class="col-md-9">
+						        	<label for="escuela" class="form-label">Nombre</label>
+									    <input type="text" class="form-control" id="escuela" required>
+									    <div class="invalid-feedback">
+												Se requiere una escuela valida.
+											</div>
+										</div>
+
+										<div class="col-md-12">
+								    	<label for="localidad" class="form-label">Localidad</label>
+								      <input type="text" class="form-control" id="localidad" required>
+								      <div class="invalid-feedback">
+								      	Se requiere una localidad valida.
+						        	</div>
+						      	</div>
+
+										<div class="col-md-6">
+								      <label for="formacion" class="form-label">Formaci&oacute;n t&eacute;cnica <span class="text-muted">(Opcional)</span></label>
+								      <input type="text" class="form-control" id="formacion">
+								      <div class="invalid-feedback">
+								      	Se requiere una formación valida.
+						        	</div>
+							      </div>
+
+										<div class="col-md-6">
+						        	<label for="promedio" class="form-label">Promedio obtenido</label>
+								      <input type="text" class="form-control" id="promedio" required>
+								      <div class="invalid-feedback">
+								      	Se requiere un promedio valido.
+								      </div>
+										</div>
+
+										<hr class="my-4">
+										<h4 class="mb-3">Programa academico</h4>
+
+										<div class="col-sm-4">
+								    	<label for="carrera" class="form-label">Carrea asignada</label>
+								      <select class="form-select" id="carrea" required>
+												<option value="">Seleccionar</option>
+												<option>Ing. en Sistemas Computacionales</option>
+												<option>Ing. en Inteligencia Artificial</option>
+												<option>Lic. en Ciencia de Datos</option>
+								      </select>
+								      <div class="invalid-feedback">
+								      	Seleccione una carrera valida.
+								      </div>
+						      	</div>
+
+										<div class="col-sm-4">
+								    	<label for="semestre" class="form-label">Semestre</label>
+								      <select class="form-select" id="semestre">
+												<option value="">1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+						        	</select>
+						        	<div class="invalid-feedback">
+						          	Seleccione un semestre valido.
+						        	</div>
+						      	</div>
+
+										<div class="col-sm-4">
+								    	<label for="opcion" class="form-label">N&uacute;mero de opci&oacute;n</label>
+								      <input type="text" class="form-control" id="opcion" required>
+								      <div class="invalid-feedback">
+								      	Se requiere una opcion valida.
+						        	</div>
+							  		</div>
+
+								<hr class="my-4">
+
+								<button class="w-100 btn btn-primary btn-lg" type="submit">Guardar datos</button>
+							</div>
+		      	</form>
+      		</div>
+				</div>
+  		</main>
+
+			<footer class="my-5 pt-5 text-muted text-center text-small">
+				<p class="mb-1">&copy; 2020 Company Name</p>
+			</footer>
+		</div>
+		<script  src="../Bibliotecas/js/bootstrap.bundle.min.js"></script>
+		<script src="../Bibliotecas/js/form-validation.js"></script>
+	</body>
+</html>
