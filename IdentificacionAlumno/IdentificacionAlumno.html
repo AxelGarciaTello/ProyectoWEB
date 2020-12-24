@@ -29,6 +29,10 @@
 
 		<!-- Custom styles for this template -->
 		<link href="../Bibliotecas/css/form-validation.css" rel="stylesheet">
+		<script type="text/javascript" src="../Bibliotecas/js/valida-curp.js">
+    </script>
+		<script type="text/javascript" src="../Bibliotecas/js/Validacion.js">
+    </script>
 	</head>
 	<body class="bg-light">
 		<div class="container">
@@ -47,7 +51,7 @@
 
 										<div class="col-sm-6">
 											<label for="CURP" class="form-label">CURP</label>
-											<input type="text" class="form-control" id="CURP" required>
+											<input type="text" class="form-control" id="CURP" oninput="validarInput(this)" required>
 											<div class="invalid-feedback">
 												Se requiere un CURP valido.
 											</div>
@@ -55,7 +59,7 @@
 
 										<div class="col-sm-6">
 											<label for="nombre" class="form-label">Nombre(s)</label>
-											<input type="text" class="form-control" id="nombre" required>
+											<input type="text" class="form-control" id="nombre" oninput="validarNombre(this)" required>
 											<div class="invalid-feedback">
 												Se requiere un nombre valido.
 											</div>
@@ -63,7 +67,7 @@
 
 								    <div class="col-sm-6">
 								    	<label for="primerApellido" class="form-label">Primer apellido</label>
-								     	<input type="text" class="form-control" id="primerApellido" required>
+								     	<input type="text" class="form-control" id="primerApellido" oninput="validarNombre(this)" required>
 								     		<div class="invalid-feedback">
 								        	Se requiere un apellido valido.
 								        </div>
@@ -71,7 +75,7 @@
 
 										<div class="col-sm-6">
 											<label for="segundoApellido" class="form-label">Segundo apellido</label>
-											<input type="text" class="form-control" id="segundoApellido" required>
+											<input type="text" class="form-control" id="segundoApellido" oninput="validarNombre(this)" required>
 											<div class="invalid-feedback">
 												Se requiere un segundo apellido valido.
 											</div>
@@ -91,7 +95,7 @@
 
 										<div class="col-md-4">
 											<label for="nacimiento" class="form-label">Fecha de nacimiento</label>
-											<input type="date"  class="form-control" id="nacimiento" min="1990-01-01" max="2020-01-01" required>
+											<input type="date"  class="form-control" id="nacimiento" min="1990-01-01" max="2003-12-31" oninput="validarFecha(this)" required>
 											<div class="invalid-feedback">
 												Se requiere una fecha valida.
 											</div>
@@ -99,7 +103,7 @@
 
 										<div class="col-md-4">
 											<label for="correo" class="form-label">Correo electronico</label>
-											<input type="email" class="form-control" id="correo" placeholder="you@example.com" required>
+											<input type="email" class="form-control" id="correo" oninput="validarCorreo(this)" required>
 											<div class="invalid-feedback">
 												Se requiere un correo valido.
 											</div>
@@ -107,7 +111,7 @@
 
 										<div class="col-md-4">
 											<label for="telefono" class="form-label">Tel&eacute;fono fijo o celular</label>
-											<input type="text" class="form-control" id="telefono" required>
+											<input type="number" class="form-control" id="telefono" oninput="validarTelefono(this)" required>
 											<div class="invalid-feedback">
 												Se requiere un tel&eacute;fono valido.
 											</div>
@@ -116,7 +120,7 @@
 										<h6 class="mb-3">Direcci&oacute;n</h6>
 										<div class="col-md-6">
 											<label for="calle" class="form-label">Calle</label>
-										  <input type="text" class="form-control" id="calle" required>
+										  <input type="text" class="form-control" id="calle" oninput="validarTexto(this)" required>
 										  <div class="invalid-feedback">
 											  Se requiere una calle valida.
 										  </div>
@@ -124,7 +128,7 @@
 
 										<div class="col-sm-3">
 						        	<label for="interior" class="form-label">No. interior</label>
-						        	<input type="text" class="form-control" id="interior" required>
+						        	<input type="number" class="form-control" id="interior" max="150" oninput="validarNumero(this)" required>
 						        	<div class="invalid-feedback">
 						         			Se requiere un no. interior valido.
 						        	</div>
@@ -132,7 +136,7 @@
 
 										<div class="col-sm-3">
 								    	<label for="exterior" class="form-label">No. exterior</label>
-								      <input type="text" class="form-control" id="exterior">
+								      <input type="number" class="form-control" id="exterior" max="50" oninput="validarNumero(this)">
 								      <div class="invalid-feedback">
 								      	Se requiere un no. exterior valido.
 						        	</div>
@@ -140,7 +144,7 @@
 
 										<div class="col-md-4">
 						        	<label for="colonia" class="form-label">Colonia</label>
-								      <input type="text" class="form-control" id="colonia" required>
+								      <input type="text" class="form-control" id="colonia" oninput="validarTexto(this)" required>
 								      <div class="invalid-feedback">
 								      	Se requiere una colonia valida.
 								      </div>
@@ -148,7 +152,7 @@
 
 										<div class="col-md-4">
 								    	<label for="municipio" class="form-label">Municipio o alcald&iacute;a</label>
-								      <input type="text" class="form-control" id="municipio" required>
+								      <input type="text" class="form-control" id="municipio" oninput="validarTexto(this)" required>
 								      <div class="invalid-feedback">
 								      	Se requiere un municipio valido.
 						        	</div>
@@ -156,7 +160,7 @@
 
 										<div class="col-md-4">
 						        	<label for="estado" class="form-label">Estado</label>
-								      <input type="text" class="form-control" id="estado" required>
+								      <input type="text" class="form-control" id="estado" oninput="validarTexto(this)" required>
 								      <div class="invalid-feedback">
 								      	Se requiere un estado valido.
 								      </div>
@@ -179,7 +183,7 @@
 
 										<div class="col-md-9">
 						        	<label for="escuela" class="form-label">Nombre</label>
-									    <input type="text" class="form-control" id="escuela" required>
+									    <input type="text" class="form-control" id="escuela" oninput="validarTexto(this)" required>
 									    <div class="invalid-feedback">
 												Se requiere una escuela valida.
 											</div>
@@ -187,7 +191,7 @@
 
 										<div class="col-md-12">
 								    	<label for="localidad" class="form-label">Localidad</label>
-								      <input type="text" class="form-control" id="localidad" required>
+								      <input type="text" class="form-control" id="localidad" oninput="validarTexto(this)" required>
 								      <div class="invalid-feedback">
 								      	Se requiere una localidad valida.
 						        	</div>
@@ -195,7 +199,7 @@
 
 										<div class="col-md-6">
 								      <label for="formacion" class="form-label">Formaci&oacute;n t&eacute;cnica <span class="text-muted">(Opcional)</span></label>
-								      <input type="text" class="form-control" id="formacion">
+								      <input type="text" class="form-control" id="formacion" oninput="validarTexto(this)">
 								      <div class="invalid-feedback">
 								      	Se requiere una formación valida.
 						        	</div>
@@ -203,7 +207,7 @@
 
 										<div class="col-md-6">
 						        	<label for="promedio" class="form-label">Promedio obtenido</label>
-								      <input type="text" class="form-control" id="promedio" required>
+								      <input type="number" class="form-control" id="promedio" max="10" oninput="validarPromedio(this)" required>
 								      <div class="invalid-feedback">
 								      	Se requiere un promedio valido.
 								      </div>
@@ -245,7 +249,7 @@
 
 										<div class="col-sm-4">
 								    	<label for="opcion" class="form-label">N&uacute;mero de opci&oacute;n</label>
-								      <input type="text" class="form-control" id="opcion" required>
+								      <input type="number" class="form-control" id="opcion" max="10" oninput="validarOpcion(this)" required>
 								      <div class="invalid-feedback">
 								      	Se requiere una opcion valida.
 						        	</div>
