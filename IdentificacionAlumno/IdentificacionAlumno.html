@@ -46,12 +46,12 @@
 					<div class="row g-3">
 		  				<div class="col-md-7 col-lg-12">
 			    				<h4 class="mb-3">Datos Personales</h4>
-		    			    <form class="needs-validation" novalidate>
+		    			    <form class="needs-validation" action="../Bibliotecas/php/RegistroAlumno.php" method="get" novalidate>
 	    			      <div class="row g-3">
 
 										<div class="col-sm-6">
 											<label for="CURP" class="form-label">CURP</label>
-											<input type="text" class="form-control" id="CURP" oninput="validarInput(this)" required>
+											<input type="text" name="CURP" class="form-control" id="CURP" oninput="validarInput(this)" required>
 											<div class="invalid-feedback">
 												Se requiere un CURP valido.
 											</div>
@@ -59,7 +59,7 @@
 
 										<div class="col-sm-6">
 											<label for="nombre" class="form-label">Nombre(s)</label>
-											<input type="text" class="form-control" id="nombre" oninput="validarNombre(this)" required>
+											<input type="text" name="nombre" class="form-control" id="nombre" oninput="validarNombre(this)" required>
 											<div class="invalid-feedback">
 												Se requiere un nombre valido.
 											</div>
@@ -67,7 +67,7 @@
 
 								    <div class="col-sm-6">
 								    	<label for="primerApellido" class="form-label">Primer apellido</label>
-								     	<input type="text" class="form-control" id="primerApellido" oninput="validarNombre(this)" required>
+								     	<input type="text" name="paterno" class="form-control" id="primerApellido" oninput="validarNombre(this)" required>
 								     		<div class="invalid-feedback">
 								        	Se requiere un apellido valido.
 								        </div>
@@ -75,7 +75,7 @@
 
 										<div class="col-sm-6">
 											<label for="segundoApellido" class="form-label">Segundo apellido</label>
-											<input type="text" class="form-control" id="segundoApellido" oninput="validarNombre(this)" required>
+											<input type="text" name="materno" class="form-control" id="segundoApellido" oninput="validarNombre(this)" required>
 											<div class="invalid-feedback">
 												Se requiere un segundo apellido valido.
 											</div>
@@ -84,18 +84,18 @@
 										<div class="my-3">
 											<label for="genero" class="form-label">G&eacute;nero</label>
 											<div class="form-check">
-												<input id="hombre" name="genero" type="radio" class="form-check-input" required>
+												<input id="hombre" name="genero" value="Hombre" type="radio" class="form-check-input" required>
 												<label class="form-check-label" for="Hombre">Hombre</label>
 											</div>
 											<div class="form-check">
-												<input id="mujer" name="genero" type="radio" class="form-check-input" required>
+												<input id="mujer" name="genero" value="Mujer" type="radio" class="form-check-input" required>
 												<label class="form-check-label" for="Mujer">Mujer</label>
 											</div>
 						        </div>
 
 										<div class="col-md-4">
 											<label for="nacimiento" class="form-label">Fecha de nacimiento</label>
-											<input type="date"  class="form-control" id="nacimiento" min="1990-01-01" max="2003-12-31" oninput="validarFecha(this)" required>
+											<input type="date" name="nacimiento" class="form-control" id="nacimiento" min="1990-01-01" max="2003-12-31" oninput="validarFecha(this)" required>
 											<div class="invalid-feedback">
 												Se requiere una fecha valida.
 											</div>
@@ -103,7 +103,7 @@
 
 										<div class="col-md-4">
 											<label for="correo" class="form-label">Correo electronico</label>
-											<input type="email" class="form-control" id="correo" oninput="validarCorreo(this)" required>
+											<input type="email" name="correo" class="form-control" id="correo" oninput="validarCorreo(this)" required>
 											<div class="invalid-feedback">
 												Se requiere un correo valido.
 											</div>
@@ -111,7 +111,7 @@
 
 										<div class="col-md-4">
 											<label for="telefono" class="form-label">Tel&eacute;fono fijo o celular</label>
-											<input type="number" class="form-control" id="telefono" oninput="validarTelefono(this)" required>
+											<input type="tel" name="telefono" class="form-control" id="telefono" oninput="validarTelefono(this)" required>
 											<div class="invalid-feedback">
 												Se requiere un tel&eacute;fono valido.
 											</div>
@@ -120,7 +120,7 @@
 										<h6 class="mb-3">Direcci&oacute;n</h6>
 										<div class="col-md-6">
 											<label for="calle" class="form-label">Calle</label>
-										  <input type="text" class="form-control" id="calle" oninput="validarTexto(this)" required>
+										  <input type="text" name="calle" class="form-control" id="calle" oninput="validarTexto(this)" required>
 										  <div class="invalid-feedback">
 											  Se requiere una calle valida.
 										  </div>
@@ -128,7 +128,7 @@
 
 										<div class="col-sm-3">
 						        	<label for="interior" class="form-label">No. interior</label>
-						        	<input type="number" class="form-control" id="interior" max="150" oninput="validarNumero(this)" required>
+						        	<input type="number" name="interior" class="form-control" id="interior" max="150" oninput="validarNumero(this)" required>
 						        	<div class="invalid-feedback">
 						         			Se requiere un no. interior valido.
 						        	</div>
@@ -136,7 +136,7 @@
 
 										<div class="col-sm-3">
 								    	<label for="exterior" class="form-label">No. exterior</label>
-								      <input type="number" class="form-control" id="exterior" max="50" oninput="validarNumero(this)">
+								      <input type="number" name="exterior" class="form-control" id="exterior" max="50" oninput="validarNumero(this)">
 								      <div class="invalid-feedback">
 								      	Se requiere un no. exterior valido.
 						        	</div>
@@ -144,7 +144,7 @@
 
 										<div class="col-md-4">
 						        	<label for="colonia" class="form-label">Colonia</label>
-								      <input type="text" class="form-control" id="colonia" oninput="validarTexto(this)" required>
+								      <input type="text" name="colonia" class="form-control" id="colonia" oninput="validarTexto(this)" required>
 								      <div class="invalid-feedback">
 								      	Se requiere una colonia valida.
 								      </div>
@@ -152,7 +152,7 @@
 
 										<div class="col-md-4">
 								    	<label for="municipio" class="form-label">Municipio o alcald&iacute;a</label>
-								      <input type="text" class="form-control" id="municipio" oninput="validarTexto(this)" required>
+								      <input type="text" name="municipio" class="form-control" id="municipio" oninput="validarTexto(this)" required>
 								      <div class="invalid-feedback">
 								      	Se requiere un municipio valido.
 						        	</div>
@@ -160,7 +160,7 @@
 
 										<div class="col-md-4">
 						        	<label for="estado" class="form-label">Estado</label>
-								      <input type="text" class="form-control" id="estado" oninput="validarTexto(this)" required>
+								      <input type="text" name="estado" class="form-control" id="estado" oninput="validarTexto(this)" required>
 								      <div class="invalid-feedback">
 								      	Se requiere un estado valido.
 								      </div>
@@ -171,7 +171,7 @@
 
 										<div class="col-md-3">
 								    	<label for="tipo" class="form-label">Tipo</label>
-								      <select class="form-select" id="tipo" required>
+								      <select name="tipoescuela" class="form-select" id="tipo" required>
 												<option value="">Seleccionar</option>
 												<option>P&uacute;blica</option>
 												<option>Privada</option>
@@ -183,7 +183,7 @@
 
 										<div class="col-md-9">
 						        	<label for="escuela" class="form-label">Nombre</label>
-									    <input type="text" class="form-control" id="escuela" oninput="validarTexto(this)" required>
+									    <input type="text" name="escuela" class="form-control" id="escuela" oninput="validarTexto(this)" required>
 									    <div class="invalid-feedback">
 												Se requiere una escuela valida.
 											</div>
@@ -191,7 +191,7 @@
 
 										<div class="col-md-12">
 								    	<label for="localidad" class="form-label">Localidad</label>
-								      <input type="text" class="form-control" id="localidad" oninput="validarTexto(this)" required>
+								      <input type="text" name="localidad" class="form-control" id="localidad" oninput="validarTexto(this)" required>
 								      <div class="invalid-feedback">
 								      	Se requiere una localidad valida.
 						        	</div>
@@ -199,7 +199,7 @@
 
 										<div class="col-md-6">
 								      <label for="formacion" class="form-label">Formaci&oacute;n t&eacute;cnica <span class="text-muted">(Opcional)</span></label>
-								      <input type="text" class="form-control" id="formacion" oninput="validarTexto(this)">
+								      <input type="text" name="formacion" class="form-control" id="formacion" oninput="validarTexto(this)">
 								      <div class="invalid-feedback">
 								      	Se requiere una formación valida.
 						        	</div>
@@ -207,7 +207,7 @@
 
 										<div class="col-md-6">
 						        	<label for="promedio" class="form-label">Promedio obtenido</label>
-								      <input type="number" class="form-control" id="promedio" max="10" oninput="validarPromedio(this)" required>
+								      <input type="text" name="promedio" class="form-control" id="promedio" min="0" max="10" oninput="validarPromedio(this)" required>
 								      <div class="invalid-feedback">
 								      	Se requiere un promedio valido.
 								      </div>
@@ -217,8 +217,8 @@
 										<h4 class="mb-3">Programa academico</h4>
 
 										<div class="col-sm-4">
-								    	<label for="carrera" class="form-label">Carrea asignada</label>
-								      <select class="form-select" id="carrea" required>
+								    	<label for="carrera" class="form-label">Carrera asignada</label>
+								      <select name="carrera" class="form-select" id="carrea" required>
 												<option value="">Seleccionar</option>
 												<option>Ing. en Sistemas Computacionales</option>
 												<option>Ing. en Inteligencia Artificial</option>
@@ -231,8 +231,8 @@
 
 										<div class="col-sm-4">
 								    	<label for="semestre" class="form-label">Semestre</label>
-								      <select class="form-select" id="semestre">
-												<option value="">1</option>
+								      <select name="semestre" class="form-select" id="semestre">
+												<option>1</option>
 												<option>2</option>
 												<option>3</option>
 												<option>4</option>
@@ -249,7 +249,7 @@
 
 										<div class="col-sm-4">
 								    	<label for="opcion" class="form-label">N&uacute;mero de opci&oacute;n</label>
-								      <input type="number" class="form-control" id="opcion" max="10" oninput="validarOpcion(this)" required>
+								      <input type="number" name="opcion" class="form-control" id="opcion" max="10" oninput="validarOpcion(this)" required>
 								      <div class="invalid-feedback">
 								      	Se requiere una opcion valida.
 						        	</div>
