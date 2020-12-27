@@ -21,7 +21,7 @@ function validarCorreo(inCorreo){
 
 function validarTelefono(inTelefono){
   var telefono = inTelefono.value;
-  if( telefono==null || telefono.length!=10){
+  if( telefono==null || telefono.length!=10 || !(/^[0-9+ ]+$/i.test(inTelefono.value))){
     inTelefono.classList.add('is-invalid');
   }
   else{
@@ -50,8 +50,8 @@ function validarNumero(inNumero){
 }
 
 function validarPromedio(inPromedio){
-  var promedio = parseInt(inPromedio.value);
-  if( promedio > 10 || promedio < 0 ){
+  var promedio = parseFloat(inPromedio.value);
+  if( promedio > 10 || promedio < 0 || !(/^[0-9.]+$/i.test(inPromedio.value))){
     inPromedio.classList.add('is-invalid');
   }
   else{
