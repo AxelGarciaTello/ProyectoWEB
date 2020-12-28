@@ -36,6 +36,9 @@ CREATE TABLE `horario` (
   `Disponibilidad` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `horario` (`IdHorario`, `Grupo`, `Fecha`, `Hora`, `Minuto`, `Disponibilidad`) VALUES
+(1, 1, '2021-01-15', 10, 0, 25);
+
 ALTER TABLE `alumno`
   ADD PRIMARY KEY (`CURP`),
   ADD KEY `IdHorario` (`IdHorario`);
