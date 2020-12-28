@@ -198,6 +198,7 @@
       else{
         echo "<h1>Error: </h1>
         <p class=\"lead\">" . mysqli_error($conn) . "</p>";
+        echo "<h2> Ya te haz registrado previamente. </h2>";
       }
       mysqli_close($conn);
     ?>
