@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Registro exitoso">
     <meta name="author" content="Garc&iacute;a Tello Axel">
-    <title>Cover Template · Bootstrap v5.0</title>
+    <title>Registro exitoso</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
 
@@ -96,6 +96,7 @@
       $Dia = 0;
       $Hora = 0;
       $Minuto = 0;
+      $Grupo = 0;
 
       if (mysqli_num_rows($result) > 0) {
         // output data of each row
@@ -104,9 +105,10 @@
           if($row["Disponibilidad"]!=0){
             $Disponibilidad = $row["Disponibilidad"] - 1;
             $Horario = $row["IdHorario"];
-            $Dia = $Anterior['Fecha'];
-            $Hora = $Anterior['Hora'];
-            $Minuto = $Anterior['Minuto'];
+            $Dia = $row['Fecha'];
+            $Hora = $row['Hora'];
+            $Minuto = $row['Minuto'];
+            $Grupo = $row['Grupo'];
             $Bandera = 1;
             break;
           }
@@ -140,9 +142,10 @@
               if($row["Disponibilidad"]!=0){
                 $Disponibilidad = $row["Disponibilidad"] - 1;
                 $Horario = $row["IdHorario"];
-                $Dia = $Anterior['Fecha'];
-                $Hora = $Anterior['Hora'];
-                $Minuto = $Anterior['Minuto'];
+                $Dia = $row['Fecha'];
+                $Hora = $row['Hora'];
+                $Minuto = $row['Minuto'];
+                $Grupo = $row['Grupo'];
               }
             }
           }
@@ -172,10 +175,19 @@
           }
           echo "<h1>Tus datos se han Guardado con exito.</h1>
           <p class=\"lead\">Tu examen diagnostico sera el d&iacute;a ". $Dia ." a las ". $Hora .":". $Minuto ."</p>
+          <p class=\"lead\">Tu grupo asignado es el grupo número ". $Grupo ."</p>
           <p class=\"lead\">Descarge el PDF como comprobante.</p>
-          <p class=\"lead\">Esta misma información tambien sera enviada a tu correo.</p>
-          <p class=\"lead\">
-            <a href=\"#\" class=\"btn btn-lg btn-secondary fw-bold border-white bg-white\">Descargar PDF</a>
+          <p class=\"lead\">Esta misma información tambien sera enviada a tu correo.</p>";
+          echo "<p class=\"lead\">
+            <a href=\"CreadorPDF.php?CURP=".$Curp.chr(38)."nombre=".$Nombre.chr(38)."
+            paterno=".$Paterno.chr(38)."materno=".$Materno.chr(38)."genero=".$Genero.chr(38)."
+            nacimiento=".$Nacimiento.chr(38)."correo=".$Correo.chr(38)."telefono=".$Telefono.chr(38)."
+            calle=".$Calle.chr(38)."interior=".$Interior.chr(38)."exterior=".$Exterior.chr(38)."colonia=".$Colonia.chr(38)."
+            municipio=".$Municipio.chr(38)."estado=".$Estado.chr(38)."tipoescuela=".$TipoEscuela.chr(38)."
+            escuela=".$Escuela.chr(38)."localidad=".$Localidad.chr(38)."formacion=".$Formacion.chr(38)."
+            promedio=".$Promedio.chr(38)."carrera=".$Carrera.chr(38)."semestre=".$Semestre.chr(38)."
+            opcion=".$Opcion.chr(38)."dia=".$Dia.chr(38)."hora=".$Hora.chr(38)."minuto=".$Minuto.chr(38)."
+            grupo=".$Grupo."\" class=\"btn btn-lg btn-secondary fw-bold border-white bg-white\">Descargar PDF</a>
           </p>";
         }
         else{
