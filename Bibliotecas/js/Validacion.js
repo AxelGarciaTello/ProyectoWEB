@@ -1,6 +1,6 @@
 function validarNombre(inNombre){
   var texto = inNombre.value;
-  if( texto == null || texto.length == 0 || !(/^[A-Z áéíóúÁÉÍÓÚ]+$/i.test(texto)) ) {
+  if( texto == null || texto.length == 0 || !(/^[A-Z áéíóúÁÉÍÓÚñ]+$/i.test(texto)) ) {
     inNombre.classList.add('is-invalid');
   }
   else{
@@ -31,7 +31,7 @@ function validarTelefono(inTelefono){
 
 function validarTexto(inTexto){
   var texto = inTexto.value;
-  if( texto == null || texto.length == 0 || !(/^[0-9a-zA-Z áéíóúÁÉÍÓÚ,.]+$/i.test(texto)) ){
+  if( texto == null || texto.length == 0 || !(/^[0-9a-zA-Z áéíóúÁÉÍÓÚ,.ñ]+$/i.test(texto)) ){
     inTexto.classList.add('is-invalid');
   }
   else{
