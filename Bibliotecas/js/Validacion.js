@@ -61,7 +61,7 @@ function validarPromedio(inPromedio){
 
 function validarOpcion(inOpcion){
   var opcion = parseInt(inOpcion.value);
-  if( opcion > 5 || opcion < 0 ){
+  if( opcion > 3 || opcion < 0 ){
     inOpcion.classList.add('is-invalid');
   }
   else{
