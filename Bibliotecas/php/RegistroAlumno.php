@@ -42,7 +42,7 @@
       <h3 class="float-md-start mb-0">ESCOM</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link active" aria-current="page" href="#">Registro de datos</a>
-        <a class="nav-link" href="#">Inicio</a>
+        <a class="nav-link" href="../../index.html">Inicio</a>
       </nav>
     </div>
   </header>
@@ -102,9 +102,9 @@
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
           $Anterior = $row;
-          if($row["Disponibilidad"]!=0){
-            $Disponibilidad = $row["Disponibilidad"] - 1;
-            $Horario = $row["IdHorario"];
+          if($row['Disponibilidad']!=0){
+            $Disponibilidad = $row['Disponibilidad'] - 1;
+            $Horario = $row['IdHorario'];
             $Dia = $row['Fecha'];
             $Hora = $row['Hora'];
             $Minuto = $row['Minuto'];
@@ -139,9 +139,9 @@
           $result = mysqli_query($conn, $sql);
           if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
-              if($row["Disponibilidad"]!=0){
-                $Disponibilidad = $row["Disponibilidad"] - 1;
-                $Horario = $row["IdHorario"];
+              if($row['Disponibilidad']!=0){
+                $Disponibilidad = $row['Disponibilidad'] - 1;
+                $Horario = $row['IdHorario'];
                 $Dia = $row['Fecha'];
                 $Hora = $row['Hora'];
                 $Minuto = $row['Minuto'];
