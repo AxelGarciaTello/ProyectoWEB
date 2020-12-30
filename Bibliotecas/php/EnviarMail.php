@@ -22,7 +22,7 @@ try {
 
     //Recipients
     $mail->setFrom('proyectosescom2@gmail.com', 'Registro diagnostico Escom');
-    $mail->addAddress('dianapaodcs@outlook.com');     // Add a recipient
+    $mail->addAddress('correopersona@gmail.com');     // Add a recipient
 
     // Attachments
     //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
@@ -30,14 +30,14 @@ try {
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Asunto prueba ';
-    $mail->Body    = 'This is the HTML message body de prueba  <b>in bold!</b>';
+    $mail->Subject = 'Registro para el examen diagnostico';
+    $mail->Body    = 'El mensaje debe ir escrito aqui xd <b>in bold!</b>';
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Message has been sent. Enviado correctamente';
+    echo 'Se envio el correo de forma satisfactoria. Revisa en tu bandeja de entrada o en spam';
 } catch (Exception $e) {
-    echo "Message could not be sent. No se pudo enviar :( Mailer Error: {$mail->ErrorInfo}";
+    echo "No se pudo enviar el correo. Error: {$mail->ErrorInfo}";
 }
 
 ?>
