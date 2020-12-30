@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Recuperación de comprobante">
+    <meta name="author" content="García Tello Axel">
+    <title>Recupera tu comprobante</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+
+
+
+    <!-- Bootstrap core CSS -->
+<link href="../Bibliotecas/css/Bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="../Bibliotecas/css/signin.css" rel="stylesheet">
+    <script type="text/javascript" src="../Bibliotecas/js/valida-curp.js">
+    </script>
+  </head>
+  <body class="text-center">
+
+<main class="form-signin">
+  <form action="../Bibliotecas/php/RecuperacionAlumno.php" method="post">
+    <img class="mb-4" src="../Imagenes/escudoESCOM.png" alt="" width="150" height="118.75">
+    <h1 class="h3 mb-3 fw-normal">Ingresa tu CURP</h1>
+    <label for="inputCURP" class="visually-hidden">CURP</label>
+    <input type="text" name="CURP" id="inputCURP" class="form-control" placeholder="CURP" oninput="validarInput(this)" required autofocus>
+    <p></p>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Buscar</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+  </form>
+</main>
+
+
+
+  </body>
+</html>
