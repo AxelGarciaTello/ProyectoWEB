@@ -82,6 +82,9 @@
       $Hora = $row['Hora'];
       $Minuto = $row['Minuto'];
       $Grupo = $row['Grupo'];
+      if($Minuto<10){
+        $Minuto = "0" . $Minuto;
+      }
     }
   }
   else{
@@ -130,7 +133,7 @@
     $pdf->Cell(100,10,utf8_decode('Escuela de procedencia'),0,1,'');
     $pdf->SetFont('Arial','',12);
     $pdf->Cell(50,10,utf8_decode('Tipo: '.$TipoEscuela),1,0,'');
-    $pdf->Cell(150,10,utf8_decode('Nombre: '.$Localidad),1,1,'');
+    $pdf->Cell(150,10,utf8_decode('Nombre: '.$Escuela),1,1,'');
     $pdf->Cell(200,10,utf8_decode('Localidad: '.$Localidad),1,1,'');
     $pdf->Cell(100,10,utf8_decode('Formación técnica: '.$Formacion),1,0,'');
     $pdf->Cell(100,10,utf8_decode('Promedio obtenido: '.$Promedio),1,1,'');
