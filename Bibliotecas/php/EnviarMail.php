@@ -61,7 +61,7 @@ try {
     //$mail->Body    = 'El mensaje debe ir escrito aqui xd <b>in bold!</b>';
     $Mensaje = utf8_decode("<center><b>
     <p><h1>IPN ESCOM</h1></p>
-    <p><h3>Comprobante de registro de examen diagnostico</h3></p></b></center>
+    <p><h3>Comprobante de registro de examen diagnóstico</h3></p></b></center>
     <p><b>Datos personales</b></p>
     <table width=\"100%\" border=\"1\" cellpadding=\"3\">
       <tr>
@@ -77,7 +77,7 @@ try {
         <td>Fecha de nacimiento: ".$Nacimiento."</td>
       </tr>
       <tr>
-        <td>Correo electronico: ".$Correo."</td>
+        <td>Correo electrónico: ".$Correo."</td>
         <td>Teléfono: ".$Telefono."</td>
       </tr>
     </table>
@@ -112,7 +112,7 @@ try {
         <td>Promedio obtenido: ".$Promedio."</td>
       </tr>
     </table>
-    <p><b>Programa academico</b></p>
+    <p><b>Programa académico</b></p>
     <table width=\"100%\" border=\"1\" cellpadding=\"3\">
       <tr>
         <td>Carrera  asignada: ".$Carrera."</td>
