@@ -174,10 +174,11 @@
             $Minuto = "0" . $Minuto;
           }
           echo "<h1>Tus datos se han Guardado con exito.</h1>
-          <p class=\"lead\">Tu examen diagnostico sera el d&iacute;a ". $Dia ." a las ". $Hora .":". $Minuto ."</p>
-          <p class=\"lead\">Tu grupo asignado es el grupo número ". $Grupo ."</p>
+          <p class=\"lead\">Tu examen est&aacute; programado para el d&iacute;a</p>
+          <p class=\"lead\">".$Dia." a las ".$Hora.":".$Minuto." hrs</p>
+          <p class=\"lead\">Tu grupo asignado es el grupo n&uacute;mero ".$Grupo."</p>
           <p class=\"lead\">Descarge el PDF como comprobante.</p>
-          <p class=\"lead\">Esta misma información tambien sera enviada a tu correo.</p>";
+          <p class=\"lead\" id=\"mensajeCorreo\">Esta misma informaci&oacute;n esta siendo enviada a tu correo.</p>";
           echo "<p class=\"lead\">
             <a href=\"CreadorPDF.php?CURP=".$Curp.chr(38)."nombre=".$Nombre.chr(38)."
             paterno=".$Paterno.chr(38)."materno=".$Materno.chr(38)."genero=".$Genero.chr(38)."
@@ -189,6 +190,42 @@
             opcion=".$Opcion.chr(38)."dia=".$Dia.chr(38)."hora=".$Hora.chr(38)."minuto=".$Minuto.chr(38)."
             grupo=".$Grupo."\" class=\"btn btn-lg btn-secondary fw-bold border-white bg-white\">Descargar PDF</a>
           </p>";
+          echo "<script>
+                  var xmlhttp = new XMLHttpRequest();
+                  xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                      document.getElementById(\"mensajeCorreo\").innerHTML = this.responseText;
+                    }
+                  };
+                  var datos = \"CURP=".$Curp.chr(38)."\";
+                  datos += \"nombre=".$Nombre.chr(38)."\";
+                  datos += \"paterno=".$Paterno.chr(38)."\";
+                  datos += \"materno=".$Materno.chr(38)."\";
+                  datos += \"genero=".$Genero.chr(38)."\";
+                  datos += \"nacimiento=".$Nacimiento.chr(38)."\";
+                  datos += \"correo=".$Correo.chr(38)."\";
+                  datos += \"telefono=".$Telefono.chr(38)."\";
+                  datos += \"calle=".$Calle.chr(38)."\";
+                  datos += \"interior=".$Interior.chr(38)."\";
+                  datos += \"exterior=".$Exterior.chr(38)."\";
+                  datos += \"colonia=".$Colonia.chr(38)."\";
+                  datos += \"municipio=".$Municipio.chr(38)."\";
+                  datos += \"estado=".$Estado.chr(38)."\";
+                  datos += \"tipoescuela=".$TipoEscuela.chr(38)."\";
+                  datos += \"escuela=".$Escuela.chr(38)."\";
+                  datos += \"localidad=".$Localidad.chr(38)."\";
+                  datos += \"formacion=".$Formacion.chr(38)."\";
+                  datos += \"promedio=".$Promedio.chr(38)."\";
+                  datos += \"carrera=".$Carrera.chr(38)."\";
+                  datos += \"semestre=".$Semestre.chr(38)."\";
+                  datos += \"opcion=".$Opcion.chr(38)."\";
+                  datos += \"dia=".$Dia.chr(38)."\";
+                  datos += \"hora=".$Hora.chr(38)."\";
+                  datos += \"minuto=".$Minuto.chr(38)."\";
+                  datos += \"grupo=".$Grupo."\";
+                  xmlhttp.open(\"GET\", \"EnviarMail.php?\" + datos, true);
+                  xmlhttp.send();
+                </script>";
         }
         else{
           echo "<h1>Error updating record: </h1>
