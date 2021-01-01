@@ -1,5 +1,10 @@
 CREATE DATABASE WEB;
 
+CREATE TABLE `administrador` (
+  `Usuario` varchar(50) NOT NULL,
+  `Contrasenia` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE `alumno` (
   `CURP` varchar(18) NOT NULL,
   `Nombre` varchar(50) NOT NULL,
@@ -38,6 +43,9 @@ CREATE TABLE `horario` (
 
 INSERT INTO `horario` (`IdHorario`, `Grupo`, `Fecha`, `Hora`, `Minuto`, `Disponibilidad`) VALUES
 (1, 1, '2021-01-15', 10, 0, 25);
+
+ALTER TABLE `administrador`
+  ADD PRIMARY KEY (`Usuario`);
 
 ALTER TABLE `alumno`
   ADD PRIMARY KEY (`CURP`),
