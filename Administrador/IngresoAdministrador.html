@@ -34,24 +34,40 @@
 
     <!-- Custom styles for this template -->
     <link href="../Bibliotecas/css/signin.css" rel="stylesheet">
+    <script>
+      function iniciarSesion(Usuario, Contrasenia) {
+        if(Usuario!=0 && Contrasenia!=0){
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              if(this.responseText=="Aceptado"){
+                window.location.replace("Menu.html");
+              }
+              else{
+                document.getElementById("mensaje").innerHTML = this.responseText;
+              }
+            }
+          };
+          xmlhttp.open("GET", "../Bibliotecas/php/IngresoAdministrador.php?Usuario="+Usuario+"&Contrasenia="+Contrasenia, true);
+          xmlhttp.send();
+        }
+      }
+    </script>
   </head>
   <body class="text-center">
 
-<main class="form-signin">
-  <form>
-    <img class="mb-4" src="../Imagenes/escudoESCOM.png" alt="" width="150" height="118.75">
-    <h1 class="h3 mb-3 fw-normal">Ingresa al sistema</h1>
-    <label for="inputUsuario" class="visually-hidden">Usuario</label>
-    <input type="text" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
-    <label for="inputPassword" class="visually-hidden">Contraseña</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
-    <p></p>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
-  </form>
-</main>
-
-
+    <main class="form-signin">
+      <img class="mb-4" src="../Imagenes/escudoESCOM.png" alt="" width="150" height="118.75">
+      <h1 class="h3 mb-3 fw-normal">Ingresa al sistema</h1>
+      <label for="Usuario" class="visually-hidden">Usuario</label>
+      <input type="text" id="Usuario" class="form-control" placeholder="Usuario" required>
+      <label for="Password" class="visually-hidden">Contraseña</label>
+      <input type="password" id="Password" class="form-control" placeholder="Contrasenia" required>
+      <p id="mensaje"></p>
+      <p></p>
+      <button class="w-100 btn btn-lg btn-primary" onclick="iniciarSesion(Usuario.value, Password.value)">Ingresar</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+    </main>
 
   </body>
 </html>
