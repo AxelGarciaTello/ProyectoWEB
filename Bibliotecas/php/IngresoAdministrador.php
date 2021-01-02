@@ -15,8 +15,7 @@
     die("Conexion fallida: " . mysqli_connect_error());
   }
 
-  $sql = "use `WEB`";
-  $result = mysqli_query($conn, $sql);
+  mysqli_select_db($conn,"WEB");
 
   $sql = "SELECT * FROM `administrador` WHERE Usuario='".$Usuario."' AND Contrasenia=sha2('".$Contrasenia."', 224)";
 
@@ -31,5 +30,6 @@
   else{
     echo "Usuario o contraseña incorrectos.";
   }
+  mysqli_close($conn);
 
 ?>

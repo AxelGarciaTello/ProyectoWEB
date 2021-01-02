@@ -90,8 +90,7 @@
         die("Conexion fallida: " . mysqli_connect_error());
       }
 
-      $sql = "use `WEB`";
-      $result = mysqli_query($conn, $sql);
+      mysqli_select_db($conn,"WEB");
 
       $sql = "SELECT * FROM alumno WHERE CURP='".$CURP."'";
 
@@ -198,7 +197,7 @@
                 xmlhttp.send();
               </script>";
       }
-
+      mysqli_close($conn);
     ?>
   </main>
 
