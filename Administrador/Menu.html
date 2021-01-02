@@ -33,42 +33,7 @@
 
     <!-- Custom styles for this template -->
     <link href="../Bibliotecas/css/dashboard.css" rel="stylesheet">
-    <script>
-      function Alumnos(){
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("pantalla").innerHTML = this.responseText;
-            document.getElementById("alumnos").classList.add('active');
-            document.getElementById("calificar").classList.remove('active');
-            document.getElementById("reportes").classList.remove('active');
-            document.getElementById("horarios").classList.remove('active');
-          }
-        };
-        xmlhttp.open("GET", "../Bibliotecas/php/InformacionAlumnos.php", true);
-        xmlhttp.send();
-      }
-      function Calificar(){
-        document.getElementById("pantalla").innerHTML = "Estas presionando Calificar";
-        document.getElementById("alumnos").classList.remove('active');
-        document.getElementById("calificar").classList.add('active');
-        document.getElementById("reportes").classList.remove('active');
-        document.getElementById("horarios").classList.remove('active');
-      }
-      function Reportes(){
-        document.getElementById("pantalla").innerHTML = "Estas presionando Reportes";
-        document.getElementById("alumnos").classList.remove('active');
-        document.getElementById("calificar").classList.remove('active');
-        document.getElementById("reportes").classList.add('active');
-        document.getElementById("horarios").classList.remove('active');
-      }
-      function Horarios(){
-        document.getElementById("pantalla").innerHTML = "Estas presionando Horarios";
-        document.getElementById("alumnos").classList.remove('active');
-        document.getElementById("calificar").classList.remove('active');
-        document.getElementById("reportes").classList.remove('active');
-        document.getElementById("horarios").classList.add('active');
-      }
+    <script src="../Bibliotecas/js/MenuAdministrador.js">
     </script>
   </head>
   <body onload="Alumnos()">
@@ -115,6 +80,7 @@
               Horarios y grupos
             </a>
         </ul>
+      </div>
     </nav>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
