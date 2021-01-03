@@ -45,7 +45,7 @@
       echo "<td>" . $row['Calificacion'] . "</td>";
       echo "<td><a href=\"../Bibliotecas/php/InformacionGeneralAlumno.php?CURP=".$row['CURP']."\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Ver</button></a></td>";
       echo "<td><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Editar</button></td>";
-      echo "<td><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Eliminar</button></td>";
+      echo "<td><a href=\"../Bibliotecas/php/EliminarAlumno.php?CURP=".$row['CURP']."\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Eliminar</button></td>";
       echo "</tr>";
     }
   }
