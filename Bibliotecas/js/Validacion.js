@@ -78,3 +78,8 @@ function validarFecha(inFecha){
     inFecha.classList.remove('is-invalid');
   }
 }
+
+function mayus(incurp){
+  var curp = incurp.value.toUpperCase();
+  incurp.value=curp;
+}
