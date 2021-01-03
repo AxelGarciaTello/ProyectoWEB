@@ -44,7 +44,7 @@
             $Hora = 0;
             $Minuto = 0;
             $Grupo = 0;
-            $Calificaion = 0;
+            $Calificacion = 0;
 
             $servername = "localhost";
             $username = "root";
@@ -87,9 +87,9 @@
               $Semestre = $row['Semestre'];
               $Opcion = $row['Opcion'];
               $IdHorario = $row['IdHorario'];
-              $Calificaion = $row['Calificacion'];
-              if(!$Calificaion){
-                $Calificaion = "Sin calificar";
+              $Calificacion = $row['Calificacion'];
+              if(!$Calificacion){
+                $Calificacion = "Sin calificar";
               }
 
               $sql = "SELECT * FROM horario WHERE IdHorario=".$IdHorario;
@@ -173,7 +173,7 @@
             <p>".$Dia." a las ".$Hora.":".$Minuto." hrs</p>
             <p>Tu grupo asignado es el grupo  número ".$Grupo."</p>
             <p>El ID del Horario es el ".$IdHorario."</p>
-            <p>Tu califición en el examen es ".$Calificaion."</p>
+            <p>Tu califición en el examen es ".$Calificacion."</p>
             </b></center>";
             echo $Mensaje;
             mysqli_close($conn);
