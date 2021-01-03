@@ -46,7 +46,7 @@
 					<div class="row g-3">
 		  				<div class="col-md-7 col-lg-12">
 			    				<h4 class="mb-3">Datos Personales</h4>
-		    			    <form class="needs-validation" action="../Bibliotecas/php/RegistroAlumno.php" method="post" novalidate>
+		    			    <form class="needs-validation" action="../Bibliotecas/php/RegistroAlumno.php" method="post" novalidate autocomplete="off">
 	    			      <div class="row g-3">
 
 										<div class="col-sm-6">
@@ -59,7 +59,7 @@
 
 										<div class="col-sm-6">
 											<label for="nombre" class="form-label">Nombre(s)</label>
-											<input type="text" name="nombre" class="form-control" id="nombre" oninput="validarNombre(this)" required>
+											<input type="text" name="nombre" class="form-control" id="nombre" oninput="validarNombre(this)" required onkeyup="javascript:this.value=this.value.toUpperCase();">
 											<div class="invalid-feedback">
 												Se requiere un nombre v&aacute;lido.
 											</div>
@@ -67,7 +67,7 @@
 
 								    <div class="col-sm-6">
 								    	<label for="primerApellido" class="form-label">Primer apellido</label>
-								     	<input type="text" name="paterno" class="form-control" id="primerApellido" oninput="validarNombre(this)" required>
+								     	<input type="text" name="paterno" class="form-control" id="primerApellido" oninput="validarNombre(this)" required onkeyup="javascript:this.value=this.value.toUpperCase();">
 								     		<div class="invalid-feedback">
 								        	Se requiere un apellido v&aacute;lido.
 								        </div>
@@ -75,7 +75,7 @@
 
 										<div class="col-sm-6">
 											<label for="segundoApellido" class="form-label">Segundo apellido</label>
-											<input type="text" name="materno" class="form-control" id="segundoApellido" oninput="validarNombre(this)" required>
+											<input type="text" name="materno" class="form-control" id="segundoApellido" oninput="validarNombre(this)" required onkeyup="javascript:this.value=this.value.toUpperCase();">
 											<div class="invalid-feedback">
 												Se requiere un segundo apellido válido.
 											</div>
@@ -85,11 +85,11 @@
 											<label for="genero" class="form-label">G&eacute;nero</label>
 											<div class="form-check">
 												<input id="hombre" name="genero" value="Hombre" type="radio" class="form-check-input" required>
-												<label class="form-check-label" for="Hombre">Hombre</label>
+												<label class="form-check-label" for="Hombre">HOMBRE</label>
 											</div>
 											<div class="form-check">
 												<input id="mujer" name="genero" value="Mujer" type="radio" class="form-check-input" required>
-												<label class="form-check-label" for="Mujer">Mujer</label>
+												<label class="form-check-label" for="Mujer">MUJER</label>
 											</div>
 						        </div>
 
@@ -120,7 +120,7 @@
 										<h6 class="mb-3">Direcci&oacute;n</h6>
 										<div class="col-md-6">
 											<label for="calle" class="form-label">Calle</label>
-										  <input type="text" name="calle" class="form-control" id="calle" oninput="validarTexto(this)" required>
+										  <input type="text" name="calle" class="form-control" id="calle" oninput="validarTexto(this)" required onkeyup="javascript:this.value=this.value.toUpperCase();">
 										  <div class="invalid-feedback">
 											  Se requiere una calle v&aacute;lida.
 										  </div>
@@ -128,7 +128,7 @@
 
 										<div class="col-sm-3">
 								    	<label for="exterior" class="form-label">No. exterior</label>
-								      <input type="number" name="exterior" class="form-control" id="exterior" max="150" oninput="validarNumero(this)" required>
+								      <input type="number" name="exterior" class="form-control" id="exterior" max="150" oninput="validarNumero(this)" required >
 								      <div class="invalid-feedback">
 								      	Se requiere un no. exterior v&aacute;lido.
 						        	</div>
@@ -144,7 +144,7 @@
 
 										<div class="col-md-4">
 						        	<label for="colonia" class="form-label">Colonia</label>
-								      <input type="text" name="colonia" class="form-control" id="colonia" oninput="validarTexto(this)" required>
+								      <input type="text" name="colonia" class="form-control" id="colonia" oninput="validarTexto(this)" required onkeyup="javascript:this.value=this.value.toUpperCase();">
 								      <div class="invalid-feedback">
 								      	Se requiere una colonia v&aacute;lida.
 								      </div>
@@ -152,7 +152,7 @@
 
 										<div class="col-md-4">
 								    	<label for="municipio" class="form-label">Municipio o alcald&iacute;a</label>
-								      <input type="text" name="municipio" class="form-control" id="municipio" oninput="validarTexto(this)" required>
+								      <input type="text" name="municipio" class="form-control" id="municipio" oninput="validarTexto(this)" required onkeyup="javascript:this.value=this.value.toUpperCase();">
 								      <div class="invalid-feedback">
 								      	Se requiere un municipio v&aacute;lido.
 						        	</div>
@@ -160,7 +160,7 @@
 
 										<div class="col-md-4">
 						        	<label for="estado" class="form-label">Estado</label>
-								      <input type="text" name="estado" class="form-control" id="estado" oninput="validarTexto(this)" required>
+								      <input type="text" name="estado" class="form-control" id="estado" oninput="validarTexto(this)" required onkeyup="javascript:this.value=this.value.toUpperCase();">
 								      <div class="invalid-feedback">
 								      	Se requiere un estado v&aacute;lido.
 								      </div>
@@ -171,10 +171,10 @@
 
 										<div class="col-md-3">
 								    	<label for="tipo" class="form-label">Tipo</label>
-								      <select name="tipoescuela" class="form-select" id="tipo" required>
+								      <select name="tipoescuela" class="form-select" id="tipo" required onkeyup="javascript:this.value=this.value.toUpperCase();">
 												<option value="">Seleccionar</option>
-												<option>P&uacute;blica</option>
-												<option>Privada</option>
+												<option>P&Uacute;BLICA</option>
+												<option>PRIVADA</option>
 						        	</select>
 								      <div class="invalid-feedback">
 								      	Se requiere un tipo v&aacute;lido.
@@ -183,7 +183,7 @@
 
 										<div class="col-md-9">
 						        	<label for="escuela" class="form-label">Nombre</label>
-									    <input type="text" name="escuela" class="form-control" id="escuela" oninput="validarTexto(this)" required>
+									    <input type="text" name="escuela" class="form-control" id="escuela" oninput="validarTexto(this)" required onkeyup="javascript:this.value=this.value.toUpperCase();">
 									    <div class="invalid-feedback">
 												Se requiere una escuela v&aacute;lida.
 											</div>
@@ -191,7 +191,7 @@
 
 										<div class="col-md-12">
 								    	<label for="localidad" class="form-label">Localidad</label>
-								      <input type="text" name="localidad" class="form-control" id="localidad" oninput="validarTexto(this)" required>
+								      <input type="text" name="localidad" class="form-control" id="localidad" oninput="validarTexto(this)" required onkeyup="javascript:this.value=this.value.toUpperCase();">
 								      <div class="invalid-feedback">
 								      	Se requiere una localidad v&aacute;lida.
 						        	</div>
@@ -199,7 +199,7 @@
 
 										<div class="col-md-6">
 								      <label for="formacion" class="form-label">Formaci&oacute;n t&eacute;cnica <span class="text-muted">(Opcional)</span></label>
-								      <input type="text" name="formacion" class="form-control" id="formacion" oninput="validarTexto(this)">
+								      <input type="text" name="formacion" class="form-control" id="formacion" oninput="validarTexto(this)" onkeyup="javascript:this.value=this.value.toUpperCase();">
 								      <div class="invalid-feedback">
 								      	Se requiere una formación v&aacute;lida.
 						        	</div>
@@ -257,7 +257,7 @@
 
 								<hr class="my-4">
 
-								<button class="w-100 btn btn-primary btn-lg" type="submit">Guardar datos</button>
+								<button class="w-100 btn btn-primary btn-lg" type="submit">Registrar</button>
 							</div>
 		      	</form>
       		</div>

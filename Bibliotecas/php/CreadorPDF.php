@@ -28,6 +28,7 @@ $Grupo = $_GET['grupo'];
 require('fpdf/fpdf.php');
 $pdf = new FPDF('P','mm','Letter');
 $pdf->AliasNbPages();
+$pdf->SetTitle('Comprobante Examen');
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',15);
 $pdf->Cell(80);
