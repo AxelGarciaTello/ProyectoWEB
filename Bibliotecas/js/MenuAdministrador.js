@@ -6,7 +6,7 @@ function Alumnos(){
   document.getElementById("horarios").classList.remove('active');
 }
 function Calificar(){
-  document.getElementById("pantalla").innerHTML = "Estas presionando Calificar";
+  document.getElementById("pantalla").innerHTML = "<iframe width=\"100%\" height=\"380%\" src=\"CalificacionAlumnos.html\" scrolling=\"yes\" frameborder=\"yes\" ></iframe>";
   document.getElementById("alumnos").classList.remove('active');
   document.getElementById("calificar").classList.add('active');
   document.getElementById("reportes").classList.remove('active');
