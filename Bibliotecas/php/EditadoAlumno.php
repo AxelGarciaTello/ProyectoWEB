@@ -247,8 +247,8 @@
 								    	<label for="tipo" class="form-label">Tipo</label>
 								      <select name="tipoescuela" class="form-select" id="tipo" required>
 												<option value="">Seleccionar</option>
-												<option>P&uacute;blica</option>
-												<option>Privada</option>
+												<option>P&Uacute;BLICA</option>
+												<option>PRIVADA</option>
 						        	</select>
 								      <div class="invalid-feedback">
 								      	Se requiere un tipo v&aacute;lido.
