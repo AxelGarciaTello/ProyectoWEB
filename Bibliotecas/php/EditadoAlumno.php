@@ -33,6 +33,80 @@
     </script>
 		<script type="text/javascript" src="../js/Validacion.js">
     </script>
+		<script type="text/javascript">
+			function EditarAlumno(){
+				var xmlhttp = new XMLHttpRequest();
+				var curp = document.getElementById("CURP").value;
+				var nombre = document.getElementById("nombre").value;
+				var paterno = document.getElementById("primerApellido").value;
+				var materno = document.getElementById("segundoApellido").value;
+				var genero;
+				if(document.getElementById("hombre").checked == true){
+					genero = "Hombre";
+				}
+				else{
+					genero = "Mujer";
+				}
+				var nacimiento = document.getElementById("nacimiento").value;
+				var correo = document.getElementById("correo").value;
+				var telefono = document.getElementById("telefono").value;
+				var calle = document.getElementById("calle").value;
+				var exterior = document.getElementById("exterior").value;
+				var interior = document.getElementById("interior").value;
+				var colonia = document.getElementById("colonia").value;
+				var municipio = document.getElementById("municipio").value;
+				var estado = document.getElementById("estado").value;
+				var tipo = document.getElementById("tipo").value;
+				var escuela = document.getElementById("escuela").value;
+				var localidad = document.getElementById("localidad").value;
+				var formacion = document.getElementById("formacion").value;
+				var promedio = document.getElementById("promedio").value;
+				var carrera = document.getElementById("carrea").value;
+				var semestre = document.getElementById("semestre").value;
+				var opcion = document.getElementById("opcion").value;
+				var idhorario = document.getElementById("idhorario").value;
+				var calificacion = document.getElementById("calificacion").value;
+				var mensaje;
+				mensaje = "CURP=" + curp;
+				mensaje += "&nombre=" + nombre;
+				mensaje += "&paterno=" + paterno;
+				mensaje += "&materno=" + materno;
+				mensaje += "&genero=" + genero;
+				mensaje += "&nacimiento=" + nacimiento;
+				mensaje += "&correo=" + correo;
+				mensaje += "&telefono=" + telefono;
+				mensaje += "&calle=" + calle;
+				mensaje += "&interior=" + interior;
+				mensaje += "&exterior=" + exterior;
+				mensaje += "&colonia=" + colonia;
+				mensaje += "&municipio=" + municipio;
+				mensaje += "&estado=" + estado;
+				mensaje += "&tipo=" + tipo;
+				mensaje += "&escuela=" + escuela;
+				mensaje += "&localidad=" + localidad;
+				mensaje += "&formacion=" + formacion;
+				mensaje += "&promedio=" + promedio;
+				mensaje += "&carrera=" + carrera;
+				mensaje += "&semestre=" + semestre;
+				mensaje += "&opcion=" + opcion;
+				mensaje += "&idhorario=" + idhorario;
+				mensaje += "&calificacion=" + calificacion;
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+						if(this.responseText == "correcto"){
+							document.getElementById("mensaje").innerHTML =
+							"<div class=\"alert alert-success\" role=\"alert\">La informaci&oacute;n se a guardado correctamente</div>";
+						}
+						else{
+							document.getElementById("mensaje").innerHTML =
+							"<div class=\"alert alert-warning\" role=\"alert\">La informaci&oacute;n no se pudo modificar</div>";
+						}
+          }
+        };
+        xmlhttp.open("GET", "EditarAlumno.php?"+mensaje, true);
+        xmlhttp.send();
+			}
+		</script>
 	</head>
 	<body class="bg-light">
 		<div class="container">
@@ -46,7 +120,7 @@
 					<div class="row g-3">
 		  				<div class="col-md-7 col-lg-12">
 			    				<h4 class="mb-3">Datos Personales</h4>
-		    			    <form class="needs-validation" method="post" novalidate>
+
 	    			      <div class="row g-3">
 
 										<div class="col-sm-6">
@@ -275,7 +349,9 @@
 
 								<hr class="my-4">
 
-								<button class="w-100 btn btn-primary btn-lg" type="submit">Modificar datos</button>
+								<span id="mensaje">
+					      </span>
+								<button class="w-100 btn btn-primary btn-lg" onclick="EditarAlumno()">Modificar datos</button>
 								<?php
 			            $CURP = $_GET['CURP'];
 			            $Nombre = 0;
@@ -299,6 +375,7 @@
 			            $Carrera = 0;
 			            $Semestre = 0;
 			            $Opcion = 0;
+									$IdHorario = 0;
 			            $Calificaion = 0;
 
 			            $servername = "localhost";
@@ -342,7 +419,7 @@
 			              $Semestre = $row['Semestre'];
 			              $Opcion = $row['Opcion'];
 			              $IdHorario = $row['IdHorario'];
-			              $Calificaion = $row['Calificacion'];
+			              $Calificacion = $row['Calificacion'];
 
 										echo "<script>
 														document.getElementById(\"CURP\").value = \"".$CURP."\";
@@ -362,6 +439,7 @@
 														document.getElementById(\"exterior\").value = \"".$Exterior."\";
 														document.getElementById(\"interior\").value = \"".$Interior."\";
 														document.getElementById(\"colonia\").value = \"".$Colonia."\";
+														document.getElementById(\"municipio\").value = \"".$Municipio."\";
 														document.getElementById(\"estado\").value = \"".$Estado."\";
 														document.getElementById(\"tipo\").value = \"".$TipoEscuela."\";
 														document.getElementById(\"escuela\").value = \"".$Escuela."\";
@@ -372,12 +450,12 @@
 														document.getElementById(\"semestre\").value = \"".$Semestre."\";
 														document.getElementById(\"opcion\").value = \"".$Opcion."\";
 														document.getElementById(\"idhorario\").value = \"".$IdHorario."\";
-														document.getElementById(\"calificacion\").value = \"".$Calificaion."\";
+														document.getElementById(\"calificacion\").value = \"".$Calificacion."\";
 													</script>";
 			            }
 								?>
 							</div>
-		      	</form>
+
       		</div>
 				</div>
   		</main>

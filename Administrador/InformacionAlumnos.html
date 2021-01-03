@@ -33,6 +33,19 @@
 
     <!-- Custom styles for this template -->
     <link href="../Bibliotecas/css/dashboard.css" rel="stylesheet">
+    <script type="text/javascript">
+      function EliminarAlumno(CURP){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            alert(this.responseText);
+            location.reload();
+          }
+        };
+        xmlhttp.open("GET", "../Bibliotecas/php/EliminarAlumno.php?CURP="+CURP, true);
+        xmlhttp.send();
+      }
+    </script>
   </head>
   <body>
     <div class="container-fluid">
