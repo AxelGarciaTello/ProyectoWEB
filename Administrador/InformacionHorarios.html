@@ -34,7 +34,7 @@
     <!-- Custom styles for this template -->
     <link href="../Bibliotecas/css/dashboard.css" rel="stylesheet">
     <script type="text/javascript">
-      function EliminarAlumno(CURP){
+      function EliminarHorarios(IdHorario){
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
@@ -42,7 +42,7 @@
             location.reload();
           }
         };
-        xmlhttp.open("GET", "../Bibliotecas/php/EliminarAlumno.php?CURP="+CURP, true);
+        xmlhttp.open("GET", "../Bibliotecas/php/EliminarHorario.php?IdHorario="+IdHorario, true);
         xmlhttp.send();
       }
     </script>

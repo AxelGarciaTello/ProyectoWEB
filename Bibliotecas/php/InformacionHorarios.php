@@ -43,7 +43,7 @@
       echo "<td>" . $row['Minuto'] . "</td>";
       echo "<td>" . $row['Disponibilidad'] . "</td>";
       echo "<td><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Editar</button></td>";
-      echo "<td><a href=\"../Bibliotecas/php/EliminarHorario.php?IdHorario=".$row['IdHorario']."\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Eliminar</button></td>";
+      echo "<td><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\"  onclick=\"EliminarHorarios('".$row['IdHorario']."')\">Eliminar</button></td>";
       echo "</tr>";
     }
   }
