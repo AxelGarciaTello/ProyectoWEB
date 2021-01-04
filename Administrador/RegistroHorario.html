@@ -44,10 +44,14 @@
 							document.getElementById("mensaje").innerHTML =
 							"<div class=\"alert alert-success\" role=\"alert\">La informaci&oacute;n se a guardado correctamente</div>";
 						}
-						else{
+						else if(this.responseText == "error"){
 							document.getElementById("mensaje").innerHTML =
 							"<div class=\"alert alert-warning\" role=\"alert\">La informaci&oacute;n no se pudo guardar</div>";
 						}
+            else{
+              document.getElementById("mensaje").innerHTML =
+							"<div class=\"alert alert-danger\" role=\"alert\">El horario fue creado previamente con el ID "+this.responseText+"</div>";
+            }
           }
         };
         var grupo = document.getElementById("grupo").value;

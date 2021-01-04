@@ -19,6 +19,17 @@
 
   mysqli_select_db($conn,"WEB");
 
+  $sql = "SELECT * FROM horario WHERE Grupo = '".$grupo."' and
+  Fecha = '".$fecha."' and Hora = '".$hora."' and Minuto = '".$minuto."'";
+
+  $result = mysqli_query($conn, $sql);
+
+  if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    echo $row['IdHorario'];
+    return;
+  }
+
   $sql = "INSERT INTO horario (IdHorario, Grupo, Fecha, Hora, Minuto,
     Disponibilidad) VALUES (NULL, '".$grupo."', '".$fecha."', '".$hora."',
       '".$minuto."', '".$disponibilidad."')";
