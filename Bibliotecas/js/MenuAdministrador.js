@@ -20,7 +20,7 @@ function Reportes(){
   document.getElementById("horarios").classList.remove('active');
 }
 function Horarios(){
-  document.getElementById("pantalla").innerHTML = "Estas presionando Horarios";
+  document.getElementById("pantalla").innerHTML =  "<iframe width=\"100%\" height=\"380%\" src=\"InformacionHorarios.html\" scrolling=\"yes\" frameborder=\"yes\" ></iframe>";
   document.getElementById("alumnos").classList.remove('active');
   document.getElementById("calificar").classList.remove('active');
   document.getElementById("reportes").classList.remove('active');
