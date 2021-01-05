@@ -13,7 +13,7 @@ function Calificar(){
   document.getElementById("horarios").classList.remove('active');
 }
 function Reportes(){
-  document.getElementById("pantalla").innerHTML = "Estas presionando Reportes";
+  document.getElementById("pantalla").innerHTML = "<iframe width=\"100%\" height=\"380%\" src=\"../Bibliotecas/php/MostrarGraficos.php\" scrolling=\"yes\" frameborder=\"yes\" ></iframe>";
   document.getElementById("alumnos").classList.remove('active');
   document.getElementById("calificar").classList.remove('active');
   document.getElementById("reportes").classList.add('active');
