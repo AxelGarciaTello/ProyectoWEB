@@ -58,6 +58,16 @@
     $result = mysqli_query($conn, $sql);
     $calif10 = mysqli_num_rows($result); 
 
+    
+    $suma=0;
+    $suma=$calif1+$calif2*2+$calif3*3+$calif4*4+$calif5*5+$calif6*6+$calif7*7+$calif8*8+$calif9*9+$calif10*10;
+    $total=0;
+    $total=$calif0+$calif1+$calif2+$calif3+$calif4+$calif5+$calif6+$calif7+$calif8+$calif9+$calif10;
+    $prom=0;
+    if($total>0){
+      $prom=$suma/$total;
+    }
+
     $data = array( 0 => $calif0,
                     1 => $calif1, 
                     2 => $calif2,
@@ -69,6 +79,7 @@
                     8 => $calif8,
                     9 => $calif9,
                     10 => $calif10,
+                    11 => round($prom,1)
                 );
     echo json_encode($data);
 

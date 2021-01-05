@@ -17,6 +17,7 @@ function graficoGeneral(){
           var cal9 = valores[9];
           var cal10 = valores[10];
 
+          document.getElementById('promedioGeneral').innerHTML='<h5>Promedio: '+valores[11]+'</h5>';
           var contexto = document.getElementById('graficoGeneral').getContext('2d');
           var myChart = new Chart(contexto,{
             type: 'doughnut',
@@ -64,6 +65,11 @@ function graficoGeneral(){
 }
 
 function graficoHorario(resp){
+    var contexto = document.getElementById('graficoGrupo').getContext('2d');
+    if (window.grafica) {
+      window.grafica.clear();
+      window.grafica.destroy();
+    }
     if(resp != ""){
       $.ajax({
       url:'CalificacionesHorario.php',
@@ -84,13 +90,12 @@ function graficoHorario(resp){
         var cal9 = valores[9];
         var cal10 = valores[10];
 
-        var contexto = document.getElementById('graficoGrupo').getContext('2d');
-        var myChart = new Chart(contexto,{
+        document.getElementById('promedioGrupo').innerHTML='<h5>Promedio: '+valores[11]+'</h5>';
+        window.grafica = new Chart(contexto,{
           type: 'bar',
           data: {      
             labels: ['0','1','2','3','4','5','6','7','8','9','10'],
             datasets: [{
-              labels: 'Calificaciones',
               backgroundColor:[ 'rgba(0,9,100,0.94)',
                                 'rgba(3,45,109,0.94)',
                                 'rgba(0,66,130,0.94)',
@@ -114,19 +119,74 @@ function graficoHorario(resp){
             legend: {
               display: false,
             },
-            title: {
-              display: true,
-              text: 'Calificaciones',
-              position: 'Bottom',
-              fontColor: 'rgb(255,0,0)'
-            }
+            scales: {
+              yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Alumnos'
+                }
+              }],
+              xAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Calificaciones'
+                }
+              }]
+            }            
           }
         });
       });
     }
     else{
-     var contexto = document.getElementById('graficoGrupo').getContext('2d');
-     var myChart = new Chart(contexto,null);
+      document.getElementById('promedioGrupo').innerHTML='<h5></h5>';
+     window.grafica = new Chart(contexto,null);
     }
 }
+
+function graficoGenero(){
+  $.ajax({
+    url:'ConsultaGenero.php',
+    type: 'POST'
+  }).done(function(resp){
+    var valores = eval(resp);
+
+        var hombre = valores[0];
+        var mujer = valores[1];
+
+
+        var contexto = document.getElementById('graficoGenero').getContext('2d');
+        var myChart = new Chart(contexto,{
+          type: 'pie',
+          data: {
+            
+            labels: ['Hombre','Mujer'],
+            datasets: [{
+              label: 'Calificaciones Generales',
+              backgroundColor:[ 'rgba(3,9,240,0.94)',
+                                'rgba(253,31,230,0.94)'
+              ],
+              borderColor: 'rgba(0,0,0,1)',
+              highlightfill: 'rgba(30,72,189,0.74)',
+
+              data: [hombre,mujer],
+              borderWidth: 1
+            }]
+          },
+          options: {
+              legend: {
+              display: true,
+              labels: {
+              fontColor: 'rgb(0,0,0)'
+              },
+              position: 'bottom' 
+            },
+            title: {
+              display: true,
+              text: '',
+              position: 'top'
+            }
+          }
+        });
+  });
   
+}
