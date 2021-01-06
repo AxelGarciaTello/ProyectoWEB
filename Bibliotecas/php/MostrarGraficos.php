@@ -75,8 +75,8 @@
             <canvas id="graficoGeneral"></canvas>
             <p id="promedioGeneral"></p>
           </div>
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center ">
-            <h1 class="h2">Horarios Disponibles</h1>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap  align-items-center ">
+            <h1 class="h2">Grupos Disponibles</h1>
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center ">
               <select class="form-select" aria-label="Grupo" name="Grupo" id="Grupo" onChange=graficoHorario(this.value);>
                 <option value="">Seleccionar Grupo</option>
@@ -84,18 +84,48 @@
               </select>              
             </div>
           </div>
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center col-9">
+          <br>
+          <div class="d-flex justify-content-between flex-wrap border-bottom flex-md-nowrap align-items-center col-9">
             <canvas id="graficoGrupo"></canvas>
             <p id="promedioGrupo"></p>
           </div>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center ">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center ">
+          <h1 class="h2">Genero</h1>
+          </div>
+          <br>
+          <div class="d-flex justify-content-between flex-wrap border-bottom flex-md-nowrap align-items-center ">
+            <div class="col-6">
               <canvas id="graficoGenero"></canvas>       
             </div>
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center ">
-              <canvas id="graficoProcedencia"></canvas>       
-            </div>
+            <div class="col-6">
+            <canvas id="graficoPromGenero"></canvas>         
+            </div>    
           </div>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center ">
+            <h1 class="h2">Escuela de Procedencia</h1>
+          </div>
+          <br>
+          <div class="d-flex justify-content-between flex-wrap border-bottom flex-md-nowrap align-items-center ">
+            <div class="col-6">
+              <canvas id="graficoPromEscuela"></canvas>         
+            </div> 
+            <div class="col-6">
+              <canvas id="graficoEscuela"></canvas>       
+            </div>   
+          </div>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center ">
+            <h1 class="h2">Carrera Seleccionada</h1>
+          </div>
+          <br>
+          <div class="d-flex justify-content-between flex-wrap border-bottom flex-md-nowrap align-items-center ">
+            <div class="col-6">
+              <canvas id="graficoCarrera"></canvas>       
+            </div>
+            <div class="col-6">
+              <canvas id="graficoPromCarrera"></canvas>         
+            </div>    
+          </div>
+          
       </main>
 
       
@@ -106,7 +136,7 @@
 
 
   <script>
-    $(document).ready(graficoGeneral(),graficoGenero());
+    $(document).ready(graficoGeneral(),graficoGenero(),graficoEscuela(),graficoCarrera());
     </script>
 
 
