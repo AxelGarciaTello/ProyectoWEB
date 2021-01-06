@@ -124,12 +124,19 @@ function graficoHorario(resp){
                 scaleLabel: {
                   display: true,
                   labelString: 'Alumnos'
+                },
+                ticks: {
+                  beginAtZero: true,
+                  max:10
                 }
               }],
               xAxes: [{
                 scaleLabel: {
                   display: true,
                   labelString: 'Calificaciones'
+                },
+                ticks: {
+                  autoSkip: false
                 }
               }]
             }            
@@ -212,7 +219,7 @@ function graficoGenero(){
             },
             title: {
               display: true,
-              text: 'Promedio',
+              text: 'Promedio de calificaciones',
               position: 'top'
             },
             scales: {
@@ -254,8 +261,8 @@ function graficoEscuela(){
             labels: ['Pública','Privada'],
             datasets: [{
               label: 'Cantidad de Alumnos',
-              backgroundColor:[ 'rgba(3,9,240,0.94)',
-                                'rgba(253,31,230,0.94)'
+              backgroundColor:[ 'rgba(0,36,130,0.94)',
+                                'rgba(0,156,160,0.94)'  
               ],
               borderColor: 'rgba(0,0,0,1)',
               highlightfill: 'rgba(30,72,189,0.74)',
@@ -288,8 +295,8 @@ function graficoEscuela(){
             labels: ['Pública','Privada'],
             datasets: [{
               label: 'Promedio de Calificaciones',
-              backgroundColor:[ 'rgba(3,9,240,0.94)',
-                                'rgba(253,31,230,0.94)'
+              backgroundColor:[ 'rgba(0,36,130,0.94)',
+                                'rgba(0,156,160,0.94)'
               ],
               borderColor: 'rgba(0,0,0,1)',
               highlightfill: 'rgba(30,72,189,0.74)',
@@ -303,7 +310,7 @@ function graficoEscuela(){
             },
             title: {
               display: true,
-              text: 'Promedio',
+              text: 'Promedio de calificaciones',
               position: 'top'
             },
             scales: {
@@ -348,8 +355,9 @@ function graficoCarrera(){
             labels: ['Sistemas Computacionales','Inteligencia Artificial','Ciencia de Datos'],
             datasets: [{
               label: 'Cantidad de Alumnos',
-              backgroundColor:[ 'rgba(3,9,240,0.94)',
-                                'rgba(253,31,230,0.94)'
+              backgroundColor:[ 'rgba(0,36,130,0.94)',
+                                'rgba(0,156,160,0.94)',
+                                'rgba(30,179,1,0.94)'
               ],
               borderColor: 'rgba(0,0,0,1)',
               highlightfill: 'rgba(30,72,189,0.74)',
@@ -382,8 +390,9 @@ function graficoCarrera(){
             labels: ['Sistemas Computacionales','Inteligencia Artificial','Ciencia de Datos'],
             datasets: [{
               label: 'Promedio de Calificaciones',
-              backgroundColor:[ 'rgba(3,9,240,0.94)',
-                                'rgba(253,31,230,0.94)'
+              backgroundColor:[ 'rgba(0,36,130,0.94)',
+                                'rgba(0,156,160,0.94)',
+                                'rgba(30,179,1,0.94)'
               ],
               borderColor: 'rgba(0,0,0,1)',
               highlightfill: 'rgba(30,72,189,0.74)',
@@ -397,7 +406,7 @@ function graficoCarrera(){
             },
             title: {
               display: true,
-              text: 'Promedio',
+              text: 'Promedio de calificaciones',
               position: 'top'
             },
             scales: {
