@@ -36,23 +36,23 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/dashboard.css" rel="stylesheet">
-    
+
     <?php
      $servername = "localhost";
      $username = "root";
      $password = "";
-   
+
      //Iniciar conexion
      $conn = mysqli_connect($servername, $username, $password);
      //Checar conexion
      if(!$conn){
        die("Conexion fallida: " . mysqli_connect_error());
-     }   
-     mysqli_select_db($conn,"WEB");   
-     $sql = "SELECT * FROM horario";   
-     $result = mysqli_query($conn, $sql);   
-   
-     $grupos=""; 
+     }
+     mysqli_select_db($conn,"WEB");
+     $sql = "SELECT * FROM horario";
+     $result = mysqli_query($conn, $sql);
+
+     $grupos="";
      if (mysqli_num_rows($result) > 0) {
        while($row = mysqli_fetch_array($result)) {
          $grupos.= '<option value="'.$row['IdHorario'].'">Grupo:'.$row['Grupo'].'    Fecha:'.$row['Fecha'].'   Hora:'.$row['Hora'].':'.$row['Minuto'];
@@ -62,77 +62,83 @@
          $grupos.='</option>';
        }
      }
-   
+
      mysqli_close($conn);
-  ?>  
+  ?>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
-      <main class="col-md-4 ms-sm-auto col-lg-9 px-md-4 ">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom col-8">
+      <main class="col-md-4 ms-sm-auto col-lg-12 px-md-4 ">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center ">
             <h1 class="h2">Alumnos</h1>
+          </div>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom col-md-10">
             <canvas id="graficoGeneral"></canvas>
             <p id="promedioGeneral"></p>
           </div>
+          <p></p><p></p>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap  align-items-center ">
             <h1 class="h2">Grupos Disponibles</h1>
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center ">
               <select class="form-select" aria-label="Grupo" name="Grupo" id="Grupo" onChange=graficoHorario(this.value);>
                 <option value="">Seleccionar Grupo</option>
                 <?php echo $grupos; ?>
-              </select>              
+              </select>
             </div>
           </div>
           <br>
-          <div class="d-flex justify-content-between flex-wrap border-bottom flex-md-nowrap align-items-center col-9">
+          <div class="d-flex justify-content-between flex-wrap border-bottom flex-md-nowrap align-items-center col-md-10">
             <canvas id="graficoGrupo"></canvas>
             <p id="promedioGrupo"></p>
           </div>
+          <p></p><p></p>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center ">
           <h1 class="h2">Genero</h1>
           </div>
           <br>
           <div class="d-flex justify-content-between flex-wrap border-bottom flex-md-nowrap align-items-center ">
-            <div class="col-6">
-              <canvas id="graficoGenero"></canvas>       
+            <div class="col-md-6">
+              <canvas id="graficoGenero"></canvas>
             </div>
-            <div class="col-6">
-            <canvas id="graficoPromGenero"></canvas>         
-            </div>    
+            <div class="col-md-6">
+            <canvas id="graficoPromGenero"></canvas>
+            </div>
           </div>
+          <p></p><p></p>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center ">
             <h1 class="h2">Escuela de Procedencia</h1>
           </div>
           <br>
           <div class="d-flex justify-content-between flex-wrap border-bottom flex-md-nowrap align-items-center ">
-            <div class="col-6">
-              <canvas id="graficoPromEscuela"></canvas>         
-            </div> 
-            <div class="col-6">
-              <canvas id="graficoEscuela"></canvas>       
-            </div>   
+            <div class="col-md-6">
+              <canvas id="graficoPromEscuela"></canvas>
+            </div>
+            <div class="col-md-6">
+              <canvas id="graficoEscuela"></canvas>
+            </div>
           </div>
+          <p></p><p></p>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center ">
             <h1 class="h2">Carrera Seleccionada</h1>
           </div>
           <br>
           <div class="d-flex justify-content-between flex-wrap border-bottom flex-md-nowrap align-items-center ">
-            <div class="col-6">
-              <canvas id="graficoCarrera"></canvas>       
+            <div class="col-md-6">
+              <canvas id="graficoCarrera"></canvas>
             </div>
-            <div class="col-6">
-              <canvas id="graficoPromCarrera"></canvas>         
-            </div>    
+            <div class="col-md-6">
+              <canvas id="graficoPromCarrera"></canvas>
+            </div>
           </div>
-          
+
       </main>
 
-      
+
       </div>
     </div>
 
- 
+
 
 
   <script>
