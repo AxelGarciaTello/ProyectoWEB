@@ -41,7 +41,7 @@
           xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
               if(this.responseText=="Aceptado"){
-                window.location.replace("Menu.html");
+                window.location.replace("../Bibliotecas/php/MenuAdministrador.php");
               }
               else{
                 document.getElementById("mensaje").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">"+this.responseText+"</div>";
