@@ -44,12 +44,15 @@
                 window.location.replace("Menu.html");
               }
               else{
-                document.getElementById("mensaje").innerHTML = this.responseText;
+                document.getElementById("mensaje").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">"+this.responseText+"</div>";
               }
             }
           };
           xmlhttp.open("GET", "../Bibliotecas/php/IngresoAdministrador.php?Usuario="+Usuario+"&Contrasenia="+Contrasenia, true);
           xmlhttp.send();
+        }
+        else{
+          document.getElementById("mensaje").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Hay campos vac&iacute;os</div>";
         }
       }
     </script>
