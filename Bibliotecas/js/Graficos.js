@@ -248,32 +248,56 @@ function graficoEscuela(){
   }).done(function(resp){
     var valores = eval(resp);
 
-        var publica = valores[0];
-        var privada = valores[1];
-        var promPublica = valores[2];
-        var promPrivada = valores[3];
+        var IPN = valores[0];
+        var UNAM = valores[1];
+        var Colbach = valores[2];
+        var Conalep = valores[3];
+        var DGB = valores[4];
+        var UEMSTIS = valores[5];
+        var UEMSTAyCM = valores[6];
+        var UAEM = valores[7];
+        var SE = valores[8];
+        var OTROS = valores[9];
+        var promIPN = valores[10];
+        var promUNAM = valores[11];
+        var promColbach = valores[12];
+        var promConalep = valores[13];
+        var promDGB = valores[14];
+        var promUEMSTIS = valores[15];
+        var promUEMSTAyCM = valores[16];
+        var promUAEM = valores[17];
+        var promSE = valores[18];
+        var promOTROS = valores[19];
 
-        var contextoEscuela = document.getElementById('graficoEscuela').getContext('2d');
-        var myChart = new Chart(contextoEscuela,{
+        var contexto = document.getElementById('graficoEscuela').getContext('2d');
+        var myChart = new Chart(contexto,{
           type: 'pie',
           data: {
             
-            labels: ['Pública','Privada'],
+            labels: ['IPN','UNAM','Colbach','DGB','Conalep','UEMSTIS','UEMSTAyCM','UAEM','SE','OTROS'],
             datasets: [{
-              label: 'Cantidad de Alumnos',
-              backgroundColor:[ 'rgba(0,36,130,0.94)',
-                                'rgba(0,156,160,0.94)'  
+              label: 'Calificaciones Generales',
+              backgroundColor:[ 'rgba(128,0,64,0.94)',
+              'rgba(213,159,15,0.94)',
+              'rgba(18, 146, 130,0.94)',
+              'rgba(56, 70, 96,0.94)',                                
+              'rgba(0,126,104,0.94)',
+              'rgba(145, 0, 69,0.94)',
+              'rgba(22, 143, 75,0.94)',
+              'rgba(121, 104, 50,0.94)',
+              'rgba(216, 19, 37,0.94)',
+              'rgba(65, 117, 35,0.94)'
               ],
               borderColor: 'rgba(0,0,0,1)',
               highlightfill: 'rgba(30,72,189,0.74)',
 
-              data: [publica,privada],
+              data: [IPN,UNAM,Colbach,DGB,Conalep,UEMSTIS,UEMSTAyCM,UAEM,SE,OTROS],
               borderWidth: 1
             }]
           },
           options: {
               legend: {
-              display: true,
+              display: false,
               labels: {
               fontColor: 'rgb(0,0,0)'
               },
@@ -287,20 +311,28 @@ function graficoEscuela(){
           }
         });
 
-        var contextoPromEscuela = document.getElementById('graficoPromEscuela').getContext('2d');
-        var myChart2 = new Chart(contextoPromEscuela,{
+        var contexto2 = document.getElementById('graficoPromEscuela').getContext('2d');
+        var myChart2 = new Chart(contexto2,{
           type: 'horizontalBar',
           data: {
             
-            labels: ['Pública','Privada'],
+            labels: ['IPN','UNAM','Colbach','DGB','Conalep','UEMSTIS','UEMSTAyCM','UAEM','SE','OTROS'],
             datasets: [{
-              label: 'Promedio de Calificaciones',
-              backgroundColor:[ 'rgba(0,36,130,0.94)',
-                                'rgba(0,156,160,0.94)'
+              label: 'Calificaciones',
+              backgroundColor:[ 'rgba(128,0,64,0.94)',
+                                'rgba(213,159,15,0.94)',
+                                'rgba(18, 146, 130,0.94)',
+                                'rgba(56, 70, 96,0.94)',                                
+                                'rgba(0,126,104,0.94)',
+                                'rgba(145, 0, 69,0.94)',
+                                'rgba(22, 143, 75,0.94)',
+                                'rgba(121, 104, 50,0.94)',
+                                'rgba(216, 19, 37,0.94)',
+                                'rgba(65, 117, 35,0.94)'
               ],
               borderColor: 'rgba(0,0,0,1)',
               highlightfill: 'rgba(30,72,189,0.74)',
-              data: [promPublica,promPrivada],
+              data: [promIPN,promUNAM,promColbach,promDGB,promConalep,promUEMSTIS,promUEMSTAyCM,promUAEM,promSE,promOTROS],
               borderWidth: 1
             }]
           },
