@@ -271,7 +271,7 @@ function graficoEscuela(){
 
         var contexto = document.getElementById('graficoEscuela').getContext('2d');
         var myChart = new Chart(contexto,{
-          type: 'pie',
+          type: 'doughnut',
           data: {
             
             labels: ['IPN','UNAM','Colbach','DGB','Conalep','UEMSTIS','UEMSTAyCM','UAEM','SE','OTROS'],
