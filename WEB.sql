@@ -20,13 +20,13 @@ CREATE TABLE `alumno` (
   `Colonia` varchar(50) NOT NULL,
   `Municipio` varchar(50) NOT NULL,
   `Estado` varchar(50) NOT NULL,
-  `TipoEsc` varchar(7) NOT NULL,
+  `TipoEsc` varchar(15) NOT NULL,
   `NombreEsc` varchar(50) NOT NULL,
   `LocalidadEsc` varchar(100) NOT NULL,
   `FormacionTec` varchar(50) DEFAULT NULL,
   `Promedio` float NOT NULL,
   `Carrera` varchar(35) NOT NULL,
-  `Semestre` tinyint(4) NOT NULL,
+  `Semestre` varchar(6) NOT NULL,
   `Opcion` tinyint(4) NOT NULL,
   `IdHorario` tinyint(4) NOT NULL,
   `Calificacion` float DEFAULT NULL
@@ -60,4 +60,3 @@ ALTER TABLE `horario`
 ALTER TABLE `alumno`
   ADD CONSTRAINT `Alumno_ibfk_1` FOREIGN KEY (`IdHorario`) REFERENCES `horario` (`IdHorario`);
 COMMIT;
-
