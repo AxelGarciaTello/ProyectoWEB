@@ -247,8 +247,16 @@
 								    	<label for="tipo" class="form-label">Tipo</label>
 								      <select name="tipoescuela" class="form-select" id="tipo" required>
 												<option value="">Seleccionar</option>
-												<option>P&Uacute;BLICA</option>
-												<option>PRIVADA</option>
+												<option>Colbach</option>
+												<option>Conalep</option>
+												<option>DGB</option>
+												<option>UEMSTIS</option>
+												<option>UEMSTAyCM</option>
+												<option>IPN</option>
+												<option>SE</option>
+												<option>UAEM</option>
+												<option>UNAM</option>
+												<option>OTROS</option>
 						        	</select>
 								      <div class="invalid-feedback">
 								      	Se requiere un tipo v&aacute;lido.
@@ -306,15 +314,9 @@
 										<div class="col-sm-4">
 								    	<label for="semestre" class="form-label">Semestre</label>
 								      <select name="semestre" class="form-select" id="semestre">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
-												<option>6</option>
-												<option>7</option>
-												<option>8</option>
-												<option>9</option>
+												<option>2021-2</option>
+												<option>2021-1</option>
+												<option>2022-1</option>
 						        	</select>
 						        	<div class="invalid-feedback">
 						          	Seleccione un semestre valido.
